@@ -1,0 +1,60 @@
+#自定义通用参数（各个环境一样的参数）（先加载本配置文件，再覆盖加载环境配置文件）
+appConfig:
+  appName: WelfareService
+  appNameCn: Welfare微服务
+
+  secretOfLoanCoreTask: secretOfLoanCoreTask_prod   #核心任务调用密钥
+  secretOfCoreService: secretOfCoreService_prod     #核心服务调用密钥
+  secretOfListService: key00000001_prod             #黑名单核心服务调用密钥
+
+  tokenKey: 123456zgqb_prod       #Token加解密秘钥
+  codeKey: registcodezgqb_prod    #短信加密秘钥
+  updateUrl: http://qlc.oss-cn-shanghai.aliyuncs.com/wanjiale.apk    #版本更新地址
+
+  smsTemplate: 
+    #异常设备登陆
+    abnormalEquipmentLogin: 您的帐号于{0}在其它设备登录，登录地址：浙江杭州，如非本人操作，请及时致电400-8515751
+    #异地登陆
+    otherPlaceLogin: 您的帐号于{0}在{1}省{2}市登录，如非本人操作，请及时致电400-8515751
+
+  pmTemplate:
+    #设备异常登录
+    loginAbnormal: 您的帐号于{0}在其它设备登录，登录地址：{1}，如非本人操作，请及时致电400-8515751
+    #异地登录
+    unusualPlaceLogin: 您的帐号于{0}在{1}省{2}市登录，如非本人操作，请及时致电400-8515751
+
+  creditWeb:
+    #文件保存地址
+    rootPath: /usr/local/tomcat/webapps/fcity/
+
+  #Ebj支付参数，测试环境和生产环境一致，不同的是回调地址（Ebj方进行配置）
+  ebjMerid: 100118136
+  ebjKey: jk411c656b4067b1beb919d5505c80
+
+  #短信通知客服电话
+  tel: 057186067502
+  #短信签名【万家乐】
+  name: 【万家乐】
+      
+  #Linkface（测试环境和生产环境配置参数一致）
+  linkface:
+    #test
+    apiId: f4e450e78a8f4440bed5f82bb69e12f0
+    apiSecret: 22dbc3ad78934dd2a3ce7def5db49970
+    #公安部照片与人脸图片比对
+    selfieIdnumberVerification: https://v2-auth-api.visioncloudapi.com/identity/idnumber_verification/stateless
+    #人脸识别对比
+    livenessSelfieVerification: https://v2-auth-api.visioncloudapi.com/identity/liveness_idnumber_verification
+
+  #数据魔盒（测试环境和生产环境配置参数一致）
+  mobileData:
+    partnerCode: muzhisd
+    partnerKey: 9725456fab9e42769471610afebe9fad
+    #创建任务apiUrl
+    createTaskUrl: https://api.shujumohe.com/octopus/task.unify.create/v3
+    #查询任务结果
+    queryTaskResultUrl: https://api.shujumohe.com/octopus/task.unify.query/v3
+    #init任务
+    initTaskUrl: https://api.shujumohe.com/octopus/yys.unify.acquire/v3
+    #重发验证码地址
+    retryUrl: https://api.shujumohe.com/octopus/task.unify.retry/v3
