@@ -1,0 +1,65 @@
+#自定义通用参数（各个环境一样的参数）（先加载本配置文件，再覆盖加载环境配置文件）
+appConfig:
+  appName: UserService
+  appNameCn: User微服务
+
+  secretOfLoanCoreTask: secretOfLoanCoreTask_prod   #核心任务调用密钥
+  secretOfCoreService: secretOfCoreService_prod     #核心服务调用密钥
+  secretOfListService: key00000001_prod             #黑名单核心服务调用密钥
+
+  tokenKey: 123456zgqb       #Token加解密秘钥
+  codeKey: registcodezgqb    #短信加密秘钥
+
+  smsTemplate: 
+    #异常设备登陆
+    abnormalEquipmentLogin: 您的帐号于{0}在其它设备登录，登录地址：浙江杭州，如非本人操作，请及时致电400-8515751
+    #异地登陆
+    otherPlaceLogin: 您的帐号于{0}在{1}省{2}市登录，如非本人操作，请及时致电400-8515751
+    #发送验证码的短信
+    vNoteMsg: 您的验证码为%s，有效时间10分钟，请勿将验证码泄露给其他人，如有疑问或非本人操作请致电400-8515751。
+    vNoteMsgRegister: 您的注册验证码：%s，有效期为10分钟，请勿将验证码泄露给他人，如非本人操作，请忽略该短信。
+    vNoteMsgLogin: 您的登录验证码：%s，有效期为10分钟，请勿将验证码泄露给他人，如非本人操作，请忽略该短信。
+    vNoteMsgResetPwd: 您的验证码：%s。您正通过手机号重置密码，如非本人操作，请忽略该短信。
+    vNoteMsgFindPwd: 您的验证码：%s。您正通过手机号找回密码，如非本人操作，请忽略该短信。
+
+  pmTemplate:
+    #设备异常登录
+    loginAbnormal: 您的帐号于{0}在其它设备登录，登录地址：{1}，如非本人操作，请及时致电400-8515751
+    #异地登录
+    unusualPlaceLogin: 您的帐号于{0}在{1}省{2}市登录，如非本人操作，请及时致电400-8515751
+
+  creditWeb:
+    #文件保存地址
+    rootPath: /usr/local/tomcat/webapps/fcity/
+
+  #Ebj支付参数，测试环境和生产环境一致，不同的是回调地址（Ebj方进行配置）
+  ebjMerid: 100118136
+  ebjKey: jk411c656b4067b1beb919d5505c80
+
+  #短信通知客服电话
+  tel: 057186067502
+  #短信签名【f-city】
+  noteName: 【点滴信用】
+
+  #数据魔盒（测试环境和生产环境配置参数一致）
+  mobileData:
+    partnerCode: muzhisd
+    partnerKey: 9725456fab9e42769471610afebe9fad
+    #创建任务apiUrl
+    createTaskUrl: https://api.shujumohe.com/octopus/task.unify.create/v3
+    #查询任务结果
+    queryTaskResultUrl: https://api.shujumohe.com/octopus/task.unify.query/v3
+    #init任务
+    initTaskUrl: https://api.shujumohe.com/octopus/yys.unify.acquire/v3
+    #重发验证码地址
+    retryUrl: https://api.shujumohe.com/octopus/task.unify.retry/v3
+
+  #数据分析平台调用信息配置
+  eventsConfig:
+    #提交事件连接
+    eventsUrl: http://192.168.3.57:8080/events
+    #密钥
+    appKey: plrwlXxdvcvjhumjs5vvxbfouq6mfdHdemcnfsok
+  identification: FCITY
+
+

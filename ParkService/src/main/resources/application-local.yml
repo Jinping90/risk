@@ -1,0 +1,55 @@
+spring:
+  application:
+    name: Park-Service #应用名称,与application.properities中保持一致
+  session:
+    store-type: none
+  datasource:
+    url: jdbc:mysql://localhost:3306/credit?characterEncoding=UTF-8
+    username: admin
+    password: admin
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    database: MYSQL
+    show-sql: false
+    generate-ddl: false
+
+  #Freemark 配置#
+  freemarker:
+    request-context-attribute: req  #req访问request
+    suffix: .html                   #后缀名
+    settings:
+      number_format: '0.##'             #数字格式化，无小数点
+
+server:
+  port: 5007  #Tomcat端口
+  max-http-header-size: 4194304
+  tomcat:
+    max-http-post-size: 0
+
+#mybatis
+mybatis:
+  configuration:
+    mapUnderscoreToCamelCase: true  #表字段自动映射-驼峰
+    useColumnLabel: true
+
+#服务注册与发现
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:2001/eureka/  #Eureka Server
+
+  #服务注册时，在Eureka的实例配置
+  #metadata-map.cluster：指定服务集群名称（一个服务集群包括多个app）
+  instance:
+    preferIpAddress: true
+    statusPageUrlPath: /info
+    metadata-map:
+      cluster: MAIN
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000  #Feign超时时间
