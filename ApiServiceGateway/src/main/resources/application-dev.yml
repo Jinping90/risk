@@ -99,7 +99,7 @@ zuul:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://192.168.3.55:10008/eureka/ #Eureka Server http://192.168.3.55:10008/
+      defaultZone: http://localhost:10008/eureka/ #Eureka Server http://192.168.3.55:10008/
 
   #服务注册时，在Eureka的实例配置
   #metadata-map.cluster：指定服务集群名称（一个服务集群包括多个app）
